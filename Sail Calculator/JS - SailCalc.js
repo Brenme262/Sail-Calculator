@@ -11,9 +11,12 @@ function worker(){
 	displacementCubicFeet = displacement / 64;
 	
 	sailAreaDisplacementRatio();
-	console.log("Sail Area / Displacement Ratio is ", sailAreaRatio);
-	console.log("Sail area is ", sailArea, ",displacement is ", displacement);
-	console.log("Displacment in cubic feet it ", displacementCubicFeet);
+	
+	
+	/// Used to test if code was working, not used in final product.
+	///console.log("Sail Area / Displacement Ratio is ", sailAreaRatio);
+	///console.log("Sail area is ", sailArea, ",displacement is ", displacement);
+	///console.log("Displacment in cubic feet it ", displacementCubicFeet);
 	
 	printResults();
 };
