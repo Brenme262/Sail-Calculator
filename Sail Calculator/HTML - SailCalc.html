@@ -1,11 +1,13 @@
 <body>
-<form onsubmit= "results();">
+<form>
 Sail Area (In Square Feet)<br>
 <Input type="text" name="Sail Area" ID="Sail Area" ><br>
 Displacement (In Pounds)<br>
 <input type="text" name="Displacement" ID= "Displacement" ><br>
-<input type="submit" value="Get Results!" >
+<input type="button" id= "click" value="Get Results!" onClick= "worker();">
+<p id ="results"></p>
 </form>
+
 </body>
 
 <script type="text/javascript" src="JS - SailCalc.js"></script>
