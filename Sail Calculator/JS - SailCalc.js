@@ -44,34 +44,35 @@ function worker(){
 	///console.log(hullSpeed);
 	
 	
+	
 	printResults();
 };
 
 
 function sailAreaDisplacementRatio(){
 	
-	sailAreaRatio =(sailArea / Math.pow(displacementCubicFeet, .6666));
+	sailAreaRatio =(sailArea / Math.pow(displacementCubicFeet, .6666)).toFixed(2);
 	
 };
 
 
 function capsizeScreeningScore(){
-	capsizeScore = beam / Math.pow(displacementCubicFeet, .3333);
+	capsizeScore = (beam / Math.pow(displacementCubicFeet, .3333)).toFixed(2);
 	
 };
 
 function waterlineLengthRatio(){
-	displacementLengthRatio = (displacement / 2240) / Math.pow((.01 * waterlineLength),3);
+	displacementLengthRatio = ((displacement / 2240) / Math.pow((.01 * waterlineLength),3)).toFixed(2);
 	
 };
 
 function brewerComfortScore(){
-	comfortScore = displacement / (.65 *((waterlineLength * .7) +(lengthOverAll *.3)) * Math.pow(beam, 1.33));
+	comfortScore = (displacement / (.65 *((waterlineLength * .7) +(lengthOverAll *.3)) * Math.pow(beam, 1.33))).toFixed(2);
 	
 };
 
 function hullSpeedCalc(){
-	hullSpeed = 1.34 * Math.sqrt(waterlineLength);
+	hullSpeed = (1.34 * Math.sqrt(waterlineLength)).toFixed(2);
 	
 };
 
