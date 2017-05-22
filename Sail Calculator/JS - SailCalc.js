@@ -11,6 +11,7 @@ var sailAreaRatio = 0
 var capsizeScore = 0
 var displacementLengthRatio = 0 
 var comfortScore = 0
+var hullSpeed = 0
 
 
 function worker(){
@@ -39,6 +40,10 @@ function worker(){
 	///console.log(comfortScore);
 	///console.log(lengthOverAll)
 	
+	hullSpeedCalc();
+	///console.log(hullSpeed);
+	
+	
 	printResults();
 };
 
@@ -65,6 +70,11 @@ function brewerComfortScore(){
 	
 };
 
+function hullSpeedCalc(){
+	hullSpeed = 1.34 * Math.sqrt(waterlineLength);
+	
+};
+
 function printResults(){
 	
 		
@@ -72,11 +82,12 @@ function printResults(){
 	let capsizeScreeningResult = `<tr> <td>Capsize Screening Score:</td> <td>${capsizeScore}</td> </tr>`;
 	let displacementLengthResult = `<tr> <td>Displacement-Length Ratio:</td> <td>${displacementLengthRatio}</td> </tr>`;
 	let comfortScoreResult = `<tr> <td>Brewer Comfort Score: </td> <td>${comfortScore}</td> </tr>`;
+	let hullSpeedResult = `<tr> <td>Hull Speed:</td> <td>${hullSpeed}</td> </tr>`;
 	
 	///Results as HTML Table Elements
 	let tableHead = `<table><tr><th>Name</th><th>Value</th></tr><tr>`;
 	let tableFoot = `</table>`;
-	let tableBody = `${sailAreaRatioResult} ${capsizeScreeningResult} ${displacementLengthResult} ${comfortScoreResult}`;
+	let tableBody = `${sailAreaRatioResult} ${capsizeScreeningResult} ${displacementLengthResult} ${comfortScoreResult} ${hullSpeedResult}`;
 
 	
 	
