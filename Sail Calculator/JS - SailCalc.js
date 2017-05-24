@@ -1,9 +1,9 @@
 ///raw data var
-var sailArea = 0
-var displacement = 0
-var beam = 0
-var waterlineLength = 0
-var lengthOverAll = 0
+var sailArea
+var displacement
+var beam
+var waterlineLength
+var lengthOverAll
 
 ///calculated var
 var displacementCubicFeet = 0
@@ -14,41 +14,80 @@ var displacementLengthRatioString = ""
 var comfortScore = 0
 var hullSpeed = 0
 
+var validated = true
 
-function worker(){
+var sailAreaValidated
+var displacementValidated
+var beamValidated
+var waterlineLengthValidated
+var lengthOverAllValidated
+
+
+function setUp(){
+	///Set Variable Values
 	sailArea= document.getElementById("Sail Area").value;
 	displacement= document.getElementById("Displacement").value;
 	beam=document.getElementById("Beam").value;
 	waterlineLength=document.getElementById("LWL").value;
 	lengthOverAll=document.getElementById("LOA").value;
 	
+	///Validate Inputs
+	if(validateInput(sailArea)===false){
+		sailAreaValidated = `<tr> <td>Please Enter a Valid Sail Area</td> </tr>`;
+		alert(sailAreaValidated);
+		validated = false;
+		}
+	else if(validateInput(displacement) ===false){
+		displacementValidated= `<tr> <td>Please Enter a Vaild Displacement</td> </tr>`;
+		alert(displacementValidated);
+		validated = false;
+		}
+	else if(validateInput(beam)===false){
+		beamValidated = `<tr> <td>Please Enter a Valid Beam</td> </tr>`;
+		alert(beamValidated);
+		validated = false;
+		}
+	else if(validateInput(waterlineLength)===false){
+		waterlineLengthValidated = `<tr> <td>Please Enter a Valid Waterline Length</td> </tr>`;
+		alert(waterlineLengthValidated);
+		validated = false;
+		}
+	else if(validateInput(lengthOverAll)===false){
+		lengthOverAllValidated = `<tr> <td>Please Enter a Vailid Length Overall</td> </tr>`;
+		alert(lengthOverAllValidated);
+		validated = false;
+		}
+	else{
+		worker();
+		};	
+	
+}
+
+function worker(){
 	
 	displacementCubicFeet = displacement / 64;
 	
 	sailAreaDisplacementRatio();
-	///console.log("Sail Area / Displacement Ratio is ", sailAreaRatio);
-	///console.log("Sail area is ", sailArea, ",displacement is ", displacement);
-	///console.log("Displacment in cubic feet it ", displacementCubicFeet);
-	///console.log(beam);
-	
+
 	capsizeScreeningScore();
-	///console.log(capsizeScore);
-	
+
 	waterlineLengthRatio();
-	///console.log(displacementLengthRatioString);
-	///console.log(waterlineLength)
-	
+
 	brewerComfortScore();
-	///console.log(comfortScore);
-	///console.log(lengthOverAll)
-	
+
 	hullSpeedCalc();
-	///console.log(hullSpeed);
-	
-	
-	
+
 	printResults();
 };
+
+function validateInput(field){
+	if (isNaN(field)){
+		return(false);
+	
+	} 
+	
+};
+
 
 
 function sailAreaDisplacementRatio(){
@@ -109,10 +148,18 @@ function printResults(){
 
 	
 	
-	///Results combined into table
-	let results = `${tableHead} ${tableBody}  ${tableFoot}`;
 	
+	///Results combined into table
+	
+	let results = `${tableHead} ${tableBody}  ${tableFoot}`;
 	document.getElementById("results").innerHTML = results;
-
+	
+		
+	
+	
+	
+	
+	
 };
+
 
