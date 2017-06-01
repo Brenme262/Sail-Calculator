@@ -1,21 +1,71 @@
+<!DOCTYPE HTML>
+<head>
+<title>
+Brenden's Sail Calculator
+</title>
+<meta charset="utf-8"/>
+<link rel="stylesheet" type="text/css" href="CSS - SailCalc.css"/>
+</head>
+
 <body>
+<div class = "container">
+<div class="title">
+<h2>Brenden's Coding Project / Sail Calculator
+</h2>
+</div>
+<div class="intro">
+"Hello everyone, and welcome to my coding project. This is a simple sail calculator that I
+created to help me practice coding. The formulas used are all sound as near as I could find, that 
+being said I make no claim that they are accurate, and they should not be used as real data in
+evaluating a sailboat. With that out of the way, please feel free to use this calculator how you like."
+</div>
+<div class="content">
+
+
+<div class="form">
 <form>
+
+<div class="form-question">
 Sail Area (In Square Feet)<br>
 <Input type="text" name="Sail Area" ID="Sail Area" ><br>
+</div>
+
+<div class="form-question">
 Displacement (In Pounds)<br>
 <input type="text" name="Displacement" ID= "Displacement" ><br>
+</div>
+
+<div class="form-question">
 Beam (In Feet)<br>
 <input type="text" name="Beam" ID= "Beam"><br>
+</div>
+
+<div class="form-question">
 Length Water Line (In Feet)<br>
 <input type="text" name="LWL" id="LWL"><br>
+</div>
+
+<div class="form-question">
 Length Over All (In Feet)<br>
 <input type="text" name="LOA" id="LOA"><br>
+</div>
 
- 
+<div class="form-submit"> 
 <input type="button" id= "click" value="Get Results!" onClick= "setUp();">
+</div>
 
-<p id ="results"></p>
+</div>
+
 </form>
+
+<div class="results">
+<p id ="results"></p>
+</div>
+
+
+
+</div>
+</div>
 
 </body>
 
