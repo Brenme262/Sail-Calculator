@@ -5,15 +5,29 @@ h2{
 	font-size: 1.75rem;
 }
 
+.content{
+	display: flex;
+	align-items: center;
+}
+
+.form{
+	flex:1 45%;
+}
+
+.results{
+	flex:2 45%;
+	
+}
+
 .intro{
-	text_align: center;
+	text-align: center;
 	color: Indigo;
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	font-size: .85rem;
 	
 }
 
-.form{
+form{
 	background-image: url("Sails.jpg");
 	background-size: cover;
 	border: .75rem solid black;
@@ -21,6 +35,8 @@ h2{
 	margin: 1.25rem;
 	
 }
+
+
 
 .form-question{
 	margin: 1.25rem;
@@ -34,6 +50,22 @@ h2{
 	
 }
 
+th{
+	background-color: green;
+	color: white;
+	font-size: 1.5rem;
+	height: 2.5rem;
+	
+}
 
+td,th{
+	border-bottom: .1rem solid gray;
+	padding:.5rem
+}
+
+table{
+	border-spacing:0;
 	
+}
 	
+
