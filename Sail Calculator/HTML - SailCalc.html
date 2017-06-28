@@ -27,28 +27,30 @@ evaluating a sailboat. With that out of the way, please feel free to use this ca
 
 <div class="form-question">
 Sail Area (In Square Feet)<br>
-<Input type="text" name="Sail Area" ID="Sail Area" ><br>
+<Input type="text" name="Sail Area" ID="Sail Area" onkeyup ="validateInput(this);"><br>
 </div>
 
 <div class="form-question">
 Displacement (In Pounds)<br>
-<input type="text" name="Displacement" ID= "Displacement" ><br>
+<input type="text" name="Displacement" ID= "Displacement" onkeyup ="validateInput(this);"><br>
 </div>
 
 <div class="form-question">
 Beam (In Feet)<br>
-<input type="text" name="Beam" ID= "Beam"><br>
+<input type="text" name="Beam" ID= "Beam" onkeyup ="validateInput(this);"><br>
 </div>
 
 <div class="form-question">
 Length Water Line (In Feet)<br>
-<input type="text" name="LWL" id="LWL"><br>
+<input type="text" name="LWL" id="LWL" onkeyup ="validateInput(this);"><br>
 </div>
 
 <div class="form-question">
 Length Over All (In Feet)<br>
-<input type="text" name="LOA" id="LOA"><br>
+<input type="text" name="LOA" id="LOA" onkeyup ="validateInput(this);"><br>
 </div>
+
+<p id="validate"></p>
 
 <div class="form-submit"> 
 <input type="button" id= "click" value="Get Results!" onClick= "setUp();">
