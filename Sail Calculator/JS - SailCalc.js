@@ -32,34 +32,8 @@ function setUp(){
 	lengthOverAll=document.getElementById("LOA").value;
 	
 	///Validate Inputs
-	if(validateInput(sailArea)===false){
-		sailAreaValidated = `<tr> <td>Please Enter a Valid Sail Area</td> </tr>`;
-		alert(sailAreaValidated);
-		validated = false;
-		}
-	else if(validateInput(displacement) ===false){
-		displacementValidated= `<tr> <td>Please Enter a Vaild Displacement</td> </tr>`;
-		alert(displacementValidated);
-		validated = false;
-		}
-	else if(validateInput(beam)===false){
-		beamValidated = `<tr> <td>Please Enter a Valid Beam</td> </tr>`;
-		alert(beamValidated);
-		validated = false;
-		}
-	else if(validateInput(waterlineLength)===false){
-		waterlineLengthValidated = `<tr> <td>Please Enter a Valid Waterline Length</td> </tr>`;
-		alert(waterlineLengthValidated);
-		validated = false;
-		}
-	else if(validateInput(lengthOverAll)===false){
-		lengthOverAllValidated = `<tr> <td>Please Enter a Vailid Length Overall</td> </tr>`;
-		alert(lengthOverAllValidated);
-		validated = false;
-		}
-	else{
-		worker();
-		};	
+	
+	worker();
 	
 }
 
@@ -80,12 +54,17 @@ function worker(){
 	printResults();
 };
 
-function validateInput(field){
-	if (isNaN(field)){
-		return(false);
+function validateInput(input){
+	let inputVal=(input.value); 
+	console.log(inputVal);
+	console.log(isNaN(inputVal))
+	if(isNaN(inputVal)){
+		document.getElementById("validate").innerHTML = `<div class="validationresult"> Please Enter a Valid Number </div>`
 	
 	} 
-	
+	else{
+		document.getElementById("validate").innerHTML = ``
+	}
 };
 
 

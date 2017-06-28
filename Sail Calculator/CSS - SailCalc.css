@@ -1,3 +1,7 @@
+html{
+	background: yellow;
+}
+
 h2{
 	text-align: center;
 	color: red;
@@ -8,6 +12,13 @@ h2{
 .content{
 	display: flex;
 	align-items: center;
+}
+
+.validationresult{
+	font-weight: bold;
+	color: red;
+	padding: 1rem;
+	text-align: center;
 }
 
 .form{
